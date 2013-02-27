@@ -1,7 +1,7 @@
 ;;; igrep.el --- An improved interface to `grep` and `find`
 ;;; -*-coding: iso-latin-1;-*-
 
-;; Copyright Â© 1993-1998,2000-2005 Kevin Rodgers
+;; Copyright © 1993-1998,2000-2005 Kevin Rodgers
 
 ;; Author: Kevin Rodgers <ihs_4664@yahoo.com>
 ;; Created:  22 Jun 1993
@@ -888,10 +888,10 @@ If the `buffer-file-name' variable is nil, return \"*\"."
       (setq files (cdr files)))
     (format (cond ((eq igrep-find-use-xargs 'gnu)
 		   ;; | \\\n
-		   "%s %s %s %s %s -print0 | xargs -0 -e %s")
+		   "%s %s %s %s %s -print0 | xargs -0 %s")
 		  (igrep-find-use-xargs
 		   ;; | \\\n
-		   "%s %s %s %s %s -print | xargs -e %s")
+		   "%s %s %s %s %s -print | xargs %s")
 		  (t
 		   "%s %s %s %s %s -exec %s %s"))
 	    igrep-find-program
